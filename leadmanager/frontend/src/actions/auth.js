@@ -54,16 +54,15 @@ export const login = (username, password) => dispatch => {
 }
 
 // REGISTER USER
-export const register = ({ username, password, email }) => dispatch => {
+export const register = ({ username, email, password }) => dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
         }
     }
 
-    const body = JSON.stringify({ username, password, email });
-
-    axios.post('/api/auth/register', body)
+    const body = JSON.stringify({ username, email, password });
+    axios.post('/api/auth/register', body, config)
         .then(res => {
             dispatch({
                 type: REGISTER_SUCCESS,
