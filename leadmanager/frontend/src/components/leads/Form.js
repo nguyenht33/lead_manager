@@ -32,7 +32,7 @@ export class Form extends Component {
     const { name, email, message } = this.state;
 
     return (
-      <div className="card card-body mt-4 mb-4">
+      <div className="card card-body mt-4 mb-4 container">
         <h2 className="text-center">Add Lead</h2>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
@@ -57,7 +57,7 @@ export class Form extends Component {
           </div>
           <div className="form-group">
             <label>Message</label>
-            <input
+            <textarea
               className="form-control"
               type="text"
               name="message"

@@ -17,35 +17,37 @@ export class Leads extends Component {
   render() {
     return (
       <Fragment>
-        <h2 className="text-center">Leads</h2>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Message</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.leads && this.props.leads.map(lead => (
-              <tr key={lead.id}>
-                <td>{lead.id}</td>
-                <td>{lead.name}</td>
-                <td>{lead.email}</td>
-                <td>{lead.message}</td>
-                <td>
-                  <button
-                    onClick={this.props.deleteLeads.bind(this, lead.id)}
-                    className="btn btn-danger btn-sm">
-                    Delete
-                  </button>
-                </td>
+        <div className="container">
+          <h2 className="text-center">Leads</h2>
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th />
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {this.props.leads && this.props.leads.map(lead => (
+                <tr key={lead.id}>
+                  <td>{lead.id}</td>
+                  <td>{lead.name}</td>
+                  <td>{lead.email}</td>
+                  <td>{lead.message}</td>
+                  <td>
+                    <button
+                      onClick={this.props.deleteLeads.bind(this, lead.id)}
+                      className="btn btn-danger btn-sm">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </Fragment>
     )
   }
